@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class RepairBay : MonoBehaviour
 {
@@ -59,12 +60,12 @@ public class RepairBay : MonoBehaviour
 
         if(part == null) return;
 
+        SceneManager.LoadScene("Level07", LoadSceneMode.Additive);
+
+        var playerCam = GameObject.Find($"{PlayerName}Cam");
+        
+
         int repairsRemaing = repairsNeeded.MakeRepair(part.name);
         part.SetActive(false);
-
-        if(repairsRemaing == 0)
-        {
-            print("you win");
-        }
     }
 }

@@ -5,15 +5,18 @@ using UnityEngine;
 public class Ship : MonoBehaviour
 {
     public bool InTransit = true;
+    public bool LiftedOff = false;
     public bool Reparied = false;
     public GameObject RepairBay;
     public GameObject OtherSpawner;
     public float moveSpeed = 25f;
 
+    private Vector3 liftOffVector;
+
     // Start is called before the first frame update
     void Start()
     {
-        
+        liftOffVector = new Vector3(RepairBay.transform.position.x, RepairBay.transform.position.y+5, RepairBay.transform.position.z);
     }
 
     // Update is called once per frame
@@ -36,11 +39,23 @@ public class Ship : MonoBehaviour
 
         if(Reparied)
         {
-            transform.position = Vector3.MoveTowards(transform.position, OtherSpawner.transform.position, moveSpeed * Time.deltaTime);
-
-            if (Vector3.Distance(transform.position, OtherSpawner.transform.position) < 0.001f)
+            if(!LiftedOff)
             {
-                Destroy(gameObject);
+                transform.position = Vector3.MoveTowards(transform.position, liftOffVector, moveSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(transform.position, liftOffVector) < 0.001f)
+                {
+                    LiftedOff = true;
+                }
+            }
+            else
+            {
+                transform.position = Vector3.MoveTowards(transform.position, OtherSpawner.transform.position, moveSpeed * Time.deltaTime);
+
+                if (Vector3.Distance(transform.position, OtherSpawner.transform.position) < 0.001f)
+                {
+                    Destroy(gameObject);
+                }
             }
         }
     }
