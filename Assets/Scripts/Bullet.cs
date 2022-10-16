@@ -24,5 +24,6 @@ public class Bullet : MonoBehaviour
         var playerComponent = other.GetComponent<Player>();
         playerComponent.Respawn();
         Destroy(gameObject);
+        Sounds.Instance.Play("boom");
     }
 }

@@ -16,7 +16,7 @@ public class ReconnectManager : MonoBehaviour
     void Start()
     {
         _scenes = GetAllScenes();
-        Fader.Instance.FadeIn();
+        Game.Instance.RefreshJobsRemaining();
     }
 
     public List<string> GetAllScenes()
@@ -46,5 +46,10 @@ public class ReconnectManager : MonoBehaviour
         SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 
         if(currentScene >= _scenes.Count) currentScene = 0;
+    }
+
+    public int JobsRemaining()
+    {
+        return _scenes.Count - currentScene;
     }
 }
