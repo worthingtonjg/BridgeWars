@@ -8,6 +8,7 @@ public class ZoomCam : MonoBehaviour
     public GameObject zoomInTarget;
     public GameObject zoomOutTarget;
     public float  moveSpeed = 25f;
+public bool hideAfterZoom = true;
 
     private bool zooming = false;
     private GameObject zoomTarget;
@@ -28,7 +29,8 @@ public class ZoomCam : MonoBehaviour
             if (Vector3.Distance(cameraTarget.transform.position, zoomTarget.transform.position) < 0.001f)
             {
                 zooming = false;
-                cameraTarget.SetActive(false);
+
+                if(hideAfterZoom) cameraTarget.SetActive(false);
             }
         }
     }
