@@ -44,9 +44,7 @@ public class RepairsNeeded : MonoBehaviour
 
     public int MakeRepair(string name)
     {
-        print(name);
         var repair = RemainingRepairs.FirstOrDefault(r => name.ToLower().Contains(r.name.ToLower()));
-        print(repair.name);
         RemainingRepairs.Remove(repair);
         repair.SetActive(false);
 

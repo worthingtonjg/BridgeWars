@@ -31,7 +31,7 @@ public class LevelController : MonoBehaviour
     {
         if(connectorComponents.All(c => c.Solved()))
         {
-            StartCoroutine("EnableNextLevel");
+            StartCoroutine("CloseLevel");
         }
 
         if(PlayerName=="P1")
@@ -42,23 +42,43 @@ public class LevelController : MonoBehaviour
             if(Input.GetKeyDown(KeyCode.S)) MoveDown();
             if(Input.GetKeyDown(KeyCode.Space)) Rotate();
         }
+        else
+        {
+            if(Input.GetKeyDown(KeyCode.LeftArrow)) MoveLeft();
+            if(Input.GetKeyDown(KeyCode.RightArrow)) MoveRight();
+            if(Input.GetKeyDown(KeyCode.UpArrow)) MoveUp();
+            if(Input.GetKeyDown(KeyCode.DownArrow)) MoveDown();
+            if(Input.GetKeyDown(KeyCode.KeypadEnter)) Rotate();            
+        }
     }
 
-    IEnumerator EnableNextLevel()
+    IEnumerator CloseLevel()
     {
         connectorComponents.ForEach(c => c.isDisabled = true);
 
         yield return new WaitForSeconds(1f);
 
-        canvas.SetActive(true);
-    }
-
-    public void NextScene()
-    {
-        if(connectorComponents.All(c => c.Solved())) 
+        GameObject player;
+        GameObject repairBay;
+        if(PlayerName=="P1")
         {
-            SceneManager.LoadScene(nextScene);
+            player = GameObject.Find("Player1");
+            repairBay = GameObject.Find("P1RepairBay");
         }
+        else
+        {
+            player = GameObject.Find("Player2");
+            repairBay = GameObject.Find("P2RepairBay");
+        }
+
+        var controller = player.GetComponent<CharacterController>();
+        controller.enabled = true;
+
+        var repairBayComponent = repairBay.GetComponent<RepairBay>();
+        repairBayComponent.RepairsFinished();
+
+        var LevelAttributes = GetComponent<LevelAttributes>();
+        SceneManager.UnloadSceneAsync(LevelAttributes.LevelName);
     }
 
     private void MoveLeft()
@@ -98,7 +118,7 @@ public class LevelController : MonoBehaviour
         {
             selectedRow = rows - 1;
         }
-
+ 
         UpdateSelected();
     }
 
