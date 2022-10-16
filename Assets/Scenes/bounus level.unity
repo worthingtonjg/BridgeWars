@@ -6755,6 +6755,10 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 362a3b680a1d51a40a3cfcc37bc74aaf, type: 2}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.size
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
+      propertyPath: correctStates.Array.data[0]
       value: 4
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}

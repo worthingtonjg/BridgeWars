@@ -61,7 +61,10 @@ public class LevelController : MonoBehaviour
 
             yield return new WaitForSeconds(1f);
 
-            Sounds.Instance.Play("winpuzzle");
+            if(Sounds.Instance != null)
+            {
+                Sounds.Instance.Play("winpuzzle");
+            }
 
             yield return new WaitForSeconds(1f);
 
@@ -77,9 +80,12 @@ public class LevelController : MonoBehaviour
                 player = GameObject.Find("Player2");
                 repairBay = GameObject.Find("P2RepairBay");
             }
-
-            var controller = player.GetComponent<CharacterController>();
-            controller.enabled = true;
+            
+            if(player != null)
+            {
+                var controller = player.GetComponent<CharacterController>();
+                controller.enabled = true;
+            }
 
             var repairBayComponent = repairBay.GetComponent<RepairBay>();
             repairBayComponent.RepairsFinished();
