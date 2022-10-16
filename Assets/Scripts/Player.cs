@@ -84,4 +84,9 @@ public class Player : MonoBehaviour
         transform.position = startingPosition;       
         controller.enabled = true;
     }
+
+    public void ToggleController(bool enabled)
+    {
+        controller.enabled = enabled;
+    }
 }

@@ -12,6 +12,7 @@ public class RepairBay : MonoBehaviour
     public Ship shipToRepair;
     public RepairsNeeded repairsNeeded;
     public string PlayerName;
+    public ReconnectManager reconnectManager;
 
     // Start is called before the first frame update
     void Start()
@@ -63,9 +64,13 @@ public class RepairBay : MonoBehaviour
         SceneManager.LoadScene("Level07", LoadSceneMode.Additive);
 
         var playerCam = GameObject.Find($"{PlayerName}Cam");
-        
 
         int repairsRemaing = repairsNeeded.MakeRepair(part.name);
         part.SetActive(false);
+
+        playerComponent.ToggleController(false);
+        reconnectManager.LoadNextSceneAdditive();
+
+        var levelAttributes = playerComponent.GetComponents<LevelAttributes>();
     }
 }
