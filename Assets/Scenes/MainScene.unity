@@ -3748,10 +3748,10 @@ MonoBehaviour:
   jumpHeight: 25
   rotationSpeed: 150
   parts:
-  - {fileID: 1657728772}
-  - {fileID: 1427294611}
-  - {fileID: 1534387202}
-  - {fileID: 2138995439}
+  - {fileID: 3010582805550329083}
+  - {fileID: 4665873086144203770}
+  - {fileID: 6189674409218316452}
+  - {fileID: 7671614495515571875}
 --- !u!143 &173773355
 CharacterController:
   m_ObjectHideFlags: 0
