@@ -6,16 +6,12 @@ using UnityEngine.SceneManagement;
 
 public class LevelController : MonoBehaviour
 {
-    public string nextScene;
-    public GameObject canvas;
     public int rows;
     public int cols;
     public string PlayerName;
 
     private int selectedRow;
     private int selectedCol;
-
-    private List<GameObject> connectors;
     private List<Connector> connectorComponents = new List<Connector>();
 
     // Start is called before the first frame update
