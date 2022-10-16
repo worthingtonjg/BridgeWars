@@ -1733,11 +1733,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ebc3e359a75b5242adca0152f1416d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nextScene: Level04
+  nextScene: 
   canvas: {fileID: 181579864}
   rows: 3
   cols: 3
-  PlayerName: P2
+  PlayerName: P1
 --- !u!4 &1559557616
 Transform:
   m_ObjectHideFlags: 0
