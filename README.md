@@ -4,6 +4,11 @@ Spaceship Repair Simulator is a game that was made in 48 hours at the 2022 Utah 
 
 But some parts are easier than others, are you up for the challenge?
 
+## Team
+
+- Jon Worthington ~ Programming
+- Ryan Worthington ~ Sound Effects, Level Design, Testing
+
 ## Game Link
 
 - [https://cypherjw.itch.io/space-repair-sim](https://cypherjw.itch.io/space-repair-sim)
