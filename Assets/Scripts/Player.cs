@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
         yaw += Input.GetAxis($"{player}Horizontal") * rotationSpeed;
         transform.eulerAngles = new Vector3(0f, yaw, 0f);
 
-        moveDirection += (transform.forward * Input.GetAxis($"{player}Vertical") * moveSpeed);
+        moveDirection += (transform.forward * Input.GetAxis($"{player}Vertical") * moveSpeed * Time.deltaTime);
 
         controller.Move(moveDirection);
 
