@@ -16,7 +16,6 @@ public class ReconnectManager : MonoBehaviour
     void Start()
     {
         _scenes = GetAllScenes();
-        print(_scenes.Count);
     }
 
     public List<string> GetAllScenes()

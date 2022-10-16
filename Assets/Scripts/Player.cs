@@ -17,12 +17,15 @@ public class Player : MonoBehaviour
     private bool isJumping;
     private CharacterController controller;
     private Vector3 startingPosition;
+    private Quaternion startingRotation;
+
     private float yaw = 0f;
 
     // Start is called before the first frame update
     void Start()
     {
         startingPosition = transform.position;    
+        startingRotation = transform.rotation;
         controller = GetComponent<CharacterController>();    
     }
 
@@ -81,7 +84,8 @@ public class Player : MonoBehaviour
         }
 
         controller.enabled = false;
-        transform.position = startingPosition;       
+        transform.position = startingPosition;    
+        transform.rotation = startingRotation;   
         controller.enabled = true;
     }
 
