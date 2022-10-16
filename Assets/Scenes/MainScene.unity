@@ -17887,7 +17887,7 @@ GameObject:
   - component: {fileID: 1427294614}
   - component: {fileID: 1427294613}
   m_Layer: 0
-  m_Name: GreenPart (1)
+  m_Name: GreenPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19214,7 +19214,7 @@ GameObject:
   - component: {fileID: 1534387205}
   - component: {fileID: 1534387204}
   m_Layer: 0
-  m_Name: RedPart (1)
+  m_Name: RedPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -20543,7 +20543,7 @@ GameObject:
   - component: {fileID: 1657728775}
   - component: {fileID: 1657728774}
   m_Layer: 0
-  m_Name: BluePart (1)
+  m_Name: BluePart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -27698,7 +27698,7 @@ GameObject:
   - component: {fileID: 2138995442}
   - component: {fileID: 2138995441}
   m_Layer: 0
-  m_Name: YellowPart (1)
+  m_Name: YellowPart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

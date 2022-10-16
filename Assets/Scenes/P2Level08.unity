@@ -960,8 +960,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5ebc3e359a75b5242adca0152f1416d6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  rows: 0
-  cols: 0
+  rows: 5
+  cols: 5
   PlayerName: P2
 --- !u!4 &701736034
 Transform:
