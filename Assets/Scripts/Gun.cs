@@ -20,6 +20,7 @@ public class Gun : MonoBehaviour
         {
             var bullet = GameObject.Instantiate(BulletPrefab, transform.position, transform.rotation);
             GameObject.Destroy(bullet, 3f);
+            Sounds.Instance.Play("pew");
         }
     }
 }
