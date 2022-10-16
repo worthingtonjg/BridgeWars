@@ -1016,6 +1016,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Level02
   canvas: {fileID: 181579864}
+  rows: 1
+  cols: 1
+  PlayerName: P1
 --- !u!4 &1559557616
 Transform:
   m_ObjectHideFlags: 0
