@@ -26,7 +26,7 @@ public class Pickup : MonoBehaviour
         if(playerComponent.parts.Any(p => p.activeSelf)) return;
 
         var part = playerComponent.parts.FirstOrDefault(p => p.name.Contains(this.name));
-
+        Sounds.Instance.Play("pickup");
         part.SetActive(true);
         gameObject.SetActive(false);
     }

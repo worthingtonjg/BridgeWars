@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
+using TMPro;
 
 public class RepairBay : MonoBehaviour
 {
@@ -13,6 +14,11 @@ public class RepairBay : MonoBehaviour
     public RepairsNeeded repairsNeeded;
     public string PlayerName;
     public ReconnectManager reconnectManager;
+    public TMP_Text Score;
+    public TMP_Text JobsRemaining;
+
+    private int score;
+    private int multiplier = 1;
 
     // Start is called before the first frame update
     void Start()
@@ -32,6 +38,18 @@ public class RepairBay : MonoBehaviour
 
     public void RepairsFinished()
     {
+        score += 100*multiplier;
+        Score.text = score.ToString();
+        ++multiplier;
+
+        bool gameOver = Game.Instance.RefreshJobsRemaining();
+
+        if(gameOver)
+        {
+            Game.Instance.ShowGameOver();
+            return;
+        }
+
         if(repairsNeeded.RemainingRepairs.Count == 0)
         {
             shipToRepair.Reparied = true;

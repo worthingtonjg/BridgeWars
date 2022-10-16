@@ -10,6 +10,7 @@ public class LevelController : MonoBehaviour
     public int cols;
     public string PlayerName;
 
+    private bool closed;
     private int selectedRow;
     private int selectedCol;
     private List<Connector> connectorComponents = new List<Connector>();
@@ -50,35 +51,47 @@ public class LevelController : MonoBehaviour
 
     IEnumerator CloseLevel()
     {
-        connectorComponents.ForEach(c => c.isDisabled = true);
+        if(closed) yield return null;
 
-        yield return new WaitForSeconds(1f);
-
-        GameObject player;
-        GameObject repairBay;
-        if(PlayerName=="P1")
+        if(!closed)
         {
-            player = GameObject.Find("Player1");
-            repairBay = GameObject.Find("P1RepairBay");
+            closed = true;
+            
+            connectorComponents.ForEach(c => c.isDisabled = true);
+
+            yield return new WaitForSeconds(1f);
+
+            Sounds.Instance.Play("winpuzzle");
+
+            yield return new WaitForSeconds(1f);
+
+            GameObject player;
+            GameObject repairBay;
+            if(PlayerName=="P1")
+            {
+                player = GameObject.Find("Player1");
+                repairBay = GameObject.Find("P1RepairBay");
+            }
+            else
+            {
+                player = GameObject.Find("Player2");
+                repairBay = GameObject.Find("P2RepairBay");
+            }
+
+            var controller = player.GetComponent<CharacterController>();
+            controller.enabled = true;
+
+            var repairBayComponent = repairBay.GetComponent<RepairBay>();
+            repairBayComponent.RepairsFinished();
+
+            var LevelAttributes = GetComponent<LevelAttributes>();
+            SceneManager.UnloadSceneAsync(LevelAttributes.LevelName);
         }
-        else
-        {
-            player = GameObject.Find("Player2");
-            repairBay = GameObject.Find("P2RepairBay");
-        }
-
-        var controller = player.GetComponent<CharacterController>();
-        controller.enabled = true;
-
-        var repairBayComponent = repairBay.GetComponent<RepairBay>();
-        repairBayComponent.RepairsFinished();
-
-        var LevelAttributes = GetComponent<LevelAttributes>();
-        SceneManager.UnloadSceneAsync(LevelAttributes.LevelName);
     }
 
     private void MoveLeft()
     {
+        Sounds.Instance.Play("switch");
         --selectedCol;
         if(selectedCol < 0)
         {
@@ -89,6 +102,7 @@ public class LevelController : MonoBehaviour
 
     private void MoveRight()
     {
+        Sounds.Instance.Play("switch");
         ++selectedCol;
         if(selectedCol >= cols)
         {
@@ -99,6 +113,7 @@ public class LevelController : MonoBehaviour
 
     private void MoveDown()
     {
+        Sounds.Instance.Play("switch");
         ++selectedRow;
         if(selectedRow >= rows)
         {
@@ -109,6 +124,7 @@ public class LevelController : MonoBehaviour
 
     private void MoveUp()
     {
+        Sounds.Instance.Play("switch");
         --selectedRow;
         if(selectedRow < 0)
         {
@@ -133,5 +149,6 @@ public class LevelController : MonoBehaviour
     private void Rotate()
     {
         GetSelected().Rotate();
+        Sounds.Instance.Play("rotate");
     }
 }
