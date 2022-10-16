@@ -24,11 +24,13 @@ public class ReconnectManager : MonoBehaviour
         for(int i = 0; i < SceneManager.sceneCount; i++)
         {
             var scene = SceneManager.GetSceneAt(i);
-            if(scene.name.StartsWith("Level"))
+            if(scene.name.StartsWith($"{PlayerName}Level"))
             {
                 result.Add(scene.name);
             }
         }
+
+        result = result.OrderBy(r => r).ToList();
 
         return result;
     }
