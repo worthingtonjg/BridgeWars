@@ -32,9 +32,12 @@ public class RepairBay : MonoBehaviour
 
     public void RepairsFinished()
     {
-        shipToRepair.Reparied = true;
-        shipToRepair = null;
-        Spawn();
+        if(repairsNeeded.RemainingRepairs.Count == 0)
+        {
+            shipToRepair.Reparied = true;
+            shipToRepair = null;
+            Spawn();
+        }
     }
 
     public void Inspect()
@@ -61,16 +64,13 @@ public class RepairBay : MonoBehaviour
 
         if(part == null) return;
 
-        SceneManager.LoadScene("Level07", LoadSceneMode.Additive);
-
         var playerCam = GameObject.Find($"{PlayerName}Cam");
+        var playerCamComponent = playerCam.GetComponent<Camera>();
 
         int repairsRemaing = repairsNeeded.MakeRepair(part.name);
         part.SetActive(false);
 
         playerComponent.ToggleController(false);
-        reconnectManager.LoadNextSceneAdditive();
-
-        var levelAttributes = playerComponent.GetComponents<LevelAttributes>();
+        reconnectManager.LoadNextSceneAdditive(playerComponent);
     }
 }

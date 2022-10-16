@@ -713,7 +713,7 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5
     y: 0
     width: 1
     height: 1
@@ -1050,7 +1050,7 @@ GameObject:
   - component: {fileID: 1559557617}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: LevelController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1071,7 +1071,7 @@ MonoBehaviour:
   canvas: {fileID: 181579864}
   rows: 1
   cols: 1
-  PlayerName: P1
+  PlayerName: P2
 --- !u!4 &1559557616
 Transform:
   m_ObjectHideFlags: 0
@@ -1099,7 +1099,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1438f25b021bf4f99ca397d9c2559d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: 
+  LevelName: P2Level01
   PlayerName: P2
   LevelController: {fileID: 1559557615}
   LevelCamera: {fileID: 963194227}

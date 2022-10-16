@@ -796,7 +796,7 @@ Camera:
   m_FocalLength: 50
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0
+    x: 0.5
     y: 0
     width: 1
     height: 1
@@ -828,7 +828,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   m_LocalRotation: {x: 0.69963664, y: -0.003215275, z: 0.0031484026, w: 0.7144847}
-  m_LocalPosition: {x: 1.47, y: 5.22, z: -0.15}
+  m_LocalPosition: {x: 1.47, y: 7.33, z: -0.15}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -1133,7 +1133,7 @@ GameObject:
   - component: {fileID: 1559557617}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: LevelController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1154,7 +1154,7 @@ MonoBehaviour:
   canvas: {fileID: 181579864}
   rows: 1
   cols: 2
-  PlayerName: P1
+  PlayerName: P2
 --- !u!4 &1559557616
 Transform:
   m_ObjectHideFlags: 0
@@ -1182,7 +1182,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1438f25b021bf4f99ca397d9c2559d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: 
+  LevelName: P2Level02
   PlayerName: P2
   LevelController: {fileID: 1559557615}
   LevelCamera: {fileID: 963194227}

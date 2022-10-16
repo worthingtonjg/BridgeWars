@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -15,32 +16,35 @@ public class ReconnectManager : MonoBehaviour
     void Start()
     {
         _scenes = GetAllScenes();
+        print(_scenes.Count);
     }
 
     public List<string> GetAllScenes()
     {
         var result = new List<string>();
 
-        for(int i = 0; i < SceneManager.sceneCount; i++)
-        {
-            var scene = SceneManager.GetSceneAt(i);
-            if(scene.name.StartsWith($"{PlayerName}Level"))
-            {
-                result.Add(scene.name);
-            }
-        }
+        // Get build scenes
+         var sceneNumber = SceneManager.sceneCountInBuildSettings;
+         
+         for (int i = 0; i < sceneNumber; i++)
+         {
+             string scene = Path.GetFileNameWithoutExtension(SceneUtility.GetScenePathByBuildIndex(i));
+             if(scene.Contains($"{PlayerName}Level"))
+             {
+                result.Add(scene);
+             }
+         }
 
         result = result.OrderBy(r => r).ToList();
 
         return result;
     }
 
-    public bool LoadNextSceneAdditive()
+    public void LoadNextSceneAdditive(Player playerComponent)
     {
-        if(currentScene >= _scenes.Count) return false;
+        string sceneName = _scenes[currentScene++];
+        SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
 
-        SceneManager.LoadScene(_scenes[currentScene++], LoadSceneMode.Additive);
-
-        return true;
+        if(currentScene >= _scenes.Count) currentScene = 0;
     }
 }

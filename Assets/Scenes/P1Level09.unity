@@ -1032,7 +1032,7 @@ Camera:
     serializedVersion: 2
     x: 0
     y: 0
-    width: 1
+    width: 0.4975
     height: 1
   near clip plane: 0.3
   far clip plane: 1000
@@ -1061,14 +1061,14 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 359659652}
-  m_LocalRotation: {x: 0.7398104, y: -0.0040396084, z: 0.0044421926, w: 0.6727887}
-  m_LocalPosition: {x: -0.8935547, y: 16.702991, z: 1.5491481}
+  m_LocalRotation: {x: 0.73861855, y: -0.0040472653, z: 0.0044346517, w: 0.6740969}
+  m_LocalPosition: {x: 0.3, y: 16.702991, z: 1.5491481}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1734211209}
   m_RootOrder: 0
-  m_LocalEulerAnglesHint: {x: 80, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 95.23, y: -0.6879883, z: 0}
 --- !u!114 &359659656
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3725,7 +3725,7 @@ GameObject:
   - component: {fileID: 2127275393}
   m_Layer: 0
   m_Name: LevelController
-  m_TagString: Untagged
+  m_TagString: LevelController
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -3744,9 +3744,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: 
   canvas: {fileID: 649845206}
-  rows: 0
-  cols: 0
-  PlayerName: 
+  rows: 5
+  cols: 5
+  PlayerName: P1
 --- !u!4 &2127275392
 Transform:
   m_ObjectHideFlags: 0
@@ -3774,7 +3774,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fc1438f25b021bf4f99ca397d9c2559d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  LevelName: 
+  LevelName: P1Level09
   PlayerName: P1
   LevelController: {fileID: 2127275391}
   LevelCamera: {fileID: 359659654}

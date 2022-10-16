@@ -13,16 +13,10 @@ public class LevelAttributes : MonoBehaviour
     
     public Camera LevelCamera;
 
-    public void SetPlayer(string name)
-    {
-        PlayerName = name;
-        LevelController.PlayerName = name;
-    }
-
     // Start is called before the first frame update
     void Start()
     {
-        LevelName = SceneManager.GetActiveScene().name;
+        
     }
 
     // Update is called once per frame

@@ -20,7 +20,6 @@ public class Parts : MonoBehaviour
     void Awake()
     {
         _instance = this;
-        print(_instance);
     }
 
     public void Respawn(string name)
