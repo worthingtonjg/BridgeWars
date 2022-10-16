@@ -687,7 +687,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444679, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_RootOrder
-      value: 9
+      value: 11
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444679, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -735,7 +735,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5975841cbb1799a4097720646eb42fe5, type: 2}
     - target: {fileID: 2837033005520444699, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_Name
-      value: Connector (3)
+      value: Connector (5)
       objectReference: {fileID: 0}
     - target: {fileID: 2837033006441842972, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1338,7 +1338,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444679, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_RootOrder
-      value: 11
+      value: 9
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444679, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_LocalPosition.x
@@ -1386,7 +1386,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5975841cbb1799a4097720646eb42fe5, type: 2}
     - target: {fileID: 2837033005520444699, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_Name
-      value: Connector (5)
+      value: Connector (3)
       objectReference: {fileID: 0}
     - target: {fileID: 2837033006441842972, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_Materials.Array.data[0]
@@ -1648,6 +1648,9 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   nextScene: Level04
   canvas: {fileID: 181579864}
+  rows: 3
+  cols: 3
+  PlayerName: P1
 --- !u!4 &1559557616
 Transform:
   m_ObjectHideFlags: 0
@@ -1978,7 +1981,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: 5975841cbb1799a4097720646eb42fe5, type: 2}
     - target: {fileID: 2837033005520444699, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_Name
-      value: Connector
+      value: Connector (0)
       objectReference: {fileID: 0}
     - target: {fileID: 2837033006441842972, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_Materials.Array.data[0]
