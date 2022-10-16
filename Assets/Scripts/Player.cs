@@ -51,7 +51,7 @@ public class Player : MonoBehaviour
 
         if(isJumping)
         {
-            moveDirection.y = jumpSpeed;
+            moveDirection.y = jumpSpeed * Time.deltaTime;
         }
 
         if(transform.position.y > startingHeight + jumpHeight)
@@ -60,7 +60,7 @@ public class Player : MonoBehaviour
             moveDirection.y = gravity * Time.deltaTime;
         }
         
-        yaw += Input.GetAxis($"{player}Horizontal") * rotationSpeed;
+        yaw += Input.GetAxis($"{player}Horizontal") * rotationSpeed * Time.deltaTime;
         transform.eulerAngles = new Vector3(0f, yaw, 0f);
 
         moveDirection += (transform.forward * Input.GetAxis($"{player}Vertical") * moveSpeed * Time.deltaTime);

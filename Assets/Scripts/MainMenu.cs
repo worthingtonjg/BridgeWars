@@ -8,7 +8,7 @@ public class MainMenu : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        Fader.Instance.FadeIn();
     }
 
     // Update is called once per frame
@@ -19,6 +19,13 @@ public class MainMenu : MonoBehaviour
 
     public void PlayGame()
     {
-        SceneManager.LoadScene("MainScene");
+        StartCoroutine(LoadMainScene());
+    }
+
+    private IEnumerator LoadMainScene()
+    {
+        Fader.Instance.FadeOut();
+        yield return new WaitForSeconds(Fader.Instance.fadeTime);
+        SceneManager.LoadScene("MainScene");        
     }
 }

@@ -16,6 +16,7 @@ public class ReconnectManager : MonoBehaviour
     void Start()
     {
         _scenes = GetAllScenes();
+        Fader.Instance.FadeIn();
     }
 
     public List<string> GetAllScenes()
