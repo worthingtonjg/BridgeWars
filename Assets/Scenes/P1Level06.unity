@@ -705,11 +705,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[0]
-      value: 0
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[1]
-      value: 2
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444679, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: m_RootOrder
@@ -1730,11 +1730,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[0]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[1]
-      value: 1
+      value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[2]
@@ -2170,7 +2170,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[0]
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 2837033005520444676, guid: f38824c56716bc14d896e722aec1d6b9, type: 3}
       propertyPath: correctStates.Array.data[1]
